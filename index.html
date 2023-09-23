@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Protomaps Leaflet Example</title>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <script src="https://unpkg.com/protomaps-leaflet"></script>
+</head>
+<body>
+    <div id="mapid" style="height: 500px;"></div>
+    <script>
+        var map = L.map('mapid').setView([51.505, -0.09], 13);
+        
+        var layer = L.tileLayer('https://om2468.github.io/pmtiles/bob.pmtiles/{z}/{x}/{y}.pbf', {
+            vectorTileLayerStyles: {
+                // Your vector styles here, if needed
+            }
+        }).addTo(map);
+    </script>
+</body>
+</html>
