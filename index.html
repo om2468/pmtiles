@@ -3,20 +3,18 @@
 <html>
 <head>
     <title>Protomaps Leaflet Example</title>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <script src="https://unpkg.com/protomaps-leaflet"></script>
 </head>
 <body>
     <div id="mapid" style="height: 500px;"></div>
-    <script>
-        var map = L.map('mapid').setView([51.5471, -0.1910], 13);  // Centered on Kilburn, London
-        
-        var layer = L.tileLayer('https://om2468.github.io/pmtiles/bob.pmtiles', {
-            vectorTileLayerStyles: {
-                // Your vector styles here, if needed
-            }
-        }).addTo(map);
-    </script>
+
+<script src="https://unpkg.com/protomaps@1.22.0/dist/protomaps-leaflet.min.js"></script>
+<script>
+    var map = L.map('mapid').setView([51.5471, -0.1910], 13);  // Centered on Kilburn, London
+    const map = L.map('map')
+    var layer = protomapsL.leafletLayer({url:'bob.pmtiles'})
+    layer.addTo(map)
+</script>
+    
 </body>
 </html>
